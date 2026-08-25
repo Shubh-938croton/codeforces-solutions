@@ -1,43 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
     int t;
     cin >> t;
-    while (t--) {
+
+    while (t--)
+    {
         int n;
         cin >> n;
+
         string s;
         cin >> s;
 
-        int maxTime = 0;
-        int i = 0;
+        int currlen = 0;
+        int maxlen = 0;
 
-        while (i < n) {
-            if (s[i] == '#') {
-                int j = i;
-                while (j < n && s[j] == '#') j++;
-                int len = j - i;
-
-                int time = 0;
-                if (len == 1) time = 0;
-                else if (len == 2) time = 1;
-                else {
-                    if (len % 2 == 0) time = len / 2;
-                    else time = (len + 1) / 2;
-                }
-
-                maxTime = max(maxTime, time);
-                i = j;
-            } else {
-                i++;
+        for (char z : s)
+        {
+            if (z == '#')
+            {
+                currlen++;
+                maxlen = max(maxlen, currlen);
+            }
+            else
+            {
+                currlen = 0;
             }
         }
 
-        cout << maxTime << "\n";
+        cout << (maxlen + 1) / 2 << "\n";
     }
+
     return 0;
 }
