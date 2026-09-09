@@ -45,6 +45,9 @@ int main(){
         }
         
         cout << (doneCount == m ? "YES" : "NO") << "\n";
+
+
+        
     }
     
     return 0;
