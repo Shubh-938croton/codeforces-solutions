@@ -9,8 +9,9 @@ int main(){
         int n; cin>>n;
         vector<int> a(n);
         for(auto &x:a) cin>>x;
+        
         int maxele=*max_element(a.begin(),a.end());
-        int cnt;
+        int cnt=0;
 
         for(int x:a){
             if(x==maxele){
